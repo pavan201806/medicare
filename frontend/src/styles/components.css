@@ -1,0 +1,443 @@
+/* Avatar Component Styles */
+.avatar-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.avatar-wrapper {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-teal));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px var(--shadow-soft);
+  overflow: hidden;
+  position: relative;
+}
+
+.avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  font-size: 4rem;
+}
+
+.avatar-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-status {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--white);
+  padding: 0.5rem 1.25rem;
+  border-radius: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-size: 0.95rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.status-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-listening {
+  background-color: var(--success-green);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.status-speaking {
+  background-color: var(--primary-blue);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.status-idle {
+  background-color: var(--text-light);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+/* Chat Interface Styles */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 200px);
+  max-height: 700px;
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--shadow-soft);
+  overflow: hidden;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.chat-message {
+  display: flex;
+  flex-direction: column;
+  max-width: 75%;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.chat-message.user {
+  align-self: flex-end;
+}
+
+.chat-message.assistant {
+  align-self: flex-start;
+}
+
+.message-content {
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.message-content.user {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  border-bottom-right-radius: 4px;
+}
+
+.message-content.assistant {
+  background-color: var(--background-soft);
+  color: var(--text-dark);
+  border-bottom-left-radius: 4px;
+}
+
+.message-time {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-top: 0.25rem;
+  padding: 0 0.5rem;
+}
+
+.chat-input-container {
+  padding: 1.25rem;
+  border-top: 1px solid var(--border-light);
+  background-color: var(--white);
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.chat-input {
+  flex: 1;
+  border: 2px solid var(--border-light);
+  border-radius: 25px;
+  padding: 0.875rem 1.5rem;
+  font-size: 1.1rem;
+}
+
+.voice-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--primary-blue);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.25rem;
+}
+
+.voice-button:hover {
+  background-color: #1a5bc7;
+  transform: scale(1.05);
+}
+
+.voice-button:active {
+  transform: scale(0.95);
+}
+
+.voice-button.recording {
+  background-color: var(--danger-red);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Medicine Card Styles */
+.medicine-card {
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 1.5rem;
+  background-color: var(--white);
+  transition: all 0.3s ease;
+  margin-bottom: 1.5rem;
+}
+
+.medicine-card:hover {
+  box-shadow: 0 4px 16px var(--shadow-soft);
+  transform: translateY(-2px);
+}
+
+.medicine-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+}
+
+.medicine-info-section {
+  margin-bottom: 1.25rem;
+}
+
+.medicine-info-section h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.75rem;
+}
+
+.medicine-info-section p,
+.medicine-info-section ul {
+  color: var(--text-medium);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.medicine-info-section ul {
+  padding-left: 1.5rem;
+}
+
+.medicine-info-section li {
+  margin-bottom: 0.5rem;
+}
+
+/* Doctor Category Card */
+.doctor-category-card {
+  border: 2px solid var(--border-light);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  background-color: var(--white);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  height: 100%;
+}
+
+.doctor-category-card:hover {
+  border-color: var(--primary-blue);
+  box-shadow: 0 4px 16px var(--shadow-soft);
+  transform: translateY(-4px);
+}
+
+.doctor-category-icon {
+  font-size: 3rem;
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+}
+
+.doctor-category-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.doctor-category-description {
+  color: var(--text-medium);
+  font-size: 1rem;
+}
+
+.category-selected {
+  background-color: rgba(31, 106, 225, 0.05) !important;
+}
+
+/* Appointment Form */
+.appointment-form {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px var(--shadow-soft);
+}
+
+/* Search Bar */
+.search-container {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-light);
+  font-size: 1.25rem;
+}
+
+.search-input {
+  padding-left: 3.5rem;
+  border: 2px solid var(--border-light);
+  border-radius: 25px;
+  font-size: 1.1rem;
+  height: 55px;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, rgba(31, 106, 225, 0.05), rgba(27, 169, 165, 0.05));
+  padding: 5rem 0;
+  border-radius: 0 0 30px 30px;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.hero-illustration {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-illustration-placeholder {
+  width: 100%;
+  max-width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-teal));
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 4rem;
+  margin: 0 auto;
+  box-shadow: 0 8px 24px var(--shadow-soft);
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-medium);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Icon Sizes - Healthcare Appropriate */
+.icon-large {
+  font-size: 5rem;
+}
+
+.icon-medium {
+  font-size: 4rem;
+}
+
+.icon-feature {
+  font-size: 3rem;
+}
+
+.icon-small {
+  font-size: 1.25rem;
+}
+
+/* Text Sizes - Large and Readable */
+.text-large {
+  font-size: 1.1rem;
+}
+
+.text-feature-list {
+  font-size: 1.1rem;
+  line-height: 2;
+}
+
+/* Spacing Utilities */
+.padding-large {
+  padding: 3rem;
+}
+
+.margin-bottom-large {
+  margin-bottom: 1.5rem;
+}
+
+/* Card Padding for Trust Section */
+.trust-card {
+  padding: 3rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .chat-container {
+    height: calc(100vh - 150px);
+  }
+  
+  .chat-message {
+    max-width: 85%;
+  }
+  
+  .avatar-wrapper {
+    max-width: 300px;
+  }
+  
+  .icon-large {
+    font-size: 4rem;
+  }
+  
+  .icon-medium {
+    font-size: 3rem;
+  }
+  
+  .icon-feature {
+    font-size: 2.5rem;
+  }
+}
+
+
